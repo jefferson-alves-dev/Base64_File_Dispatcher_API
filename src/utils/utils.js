@@ -6,7 +6,15 @@ exports.convertFileToBase64 = (folderName, fileName) => {
   try {
     // Read PDF file as a byte array
     const fileReading = fs.readFileSync(
-      path.resolve(__dirname, '..', '..', 'public', 'files', String(folderName), String(fileName))
+      path.resolve(
+        __dirname,
+        '..',
+        '..',
+        'public',
+        'files',
+        String(folderName),
+        String(fileName)
+      )
     );
 
     // Convert fileReading to base64 string
