@@ -13,7 +13,7 @@ exports.controllerMp3 = (req, res) => {
     });
     return;
   }
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.mp3', base64String: base64 });
 };
 
 exports.controllerWav = (req, res) => {
@@ -25,17 +25,17 @@ exports.controllerWav = (req, res) => {
     });
     return;
   }
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.wav', base64String: base64 });
 };
 
 exports.controllerPng = (req, res) => {
   const base64 = convertFileToBase64('png', 'png.png');
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.png', base64String: base64 });
 };
 
 exports.controllerJpeg = (req, res) => {
   const base64 = convertFileToBase64('jpeg', 'jpeg.jpeg');
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.jpeg', base64String: base64 });
 };
 
 exports.controllerRandomImage = (req, res) => {
@@ -46,22 +46,22 @@ exports.controllerRandomImage = (req, res) => {
 
 exports.controllerIso = (req, res) => {
   const base64 = convertFileToBase64('iso', 'iso.iso');
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.iso', base64String: base64 });
 };
 
 exports.controllerZip = (req, res) => {
   const base64 = convertFileToBase64('zip', 'zip.zip');
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.zip', base64String: base64 });
 };
 
 exports.controller7z = (req, res) => {
   const base64 = convertFileToBase64('7z', '7z.7z');
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.7z', base64String: base64 });
 };
 
 exports.controllerXml = (req, res) => {
   const base64 = convertFileToBase64('xml', 'xml.xml');
-  res.json({ base64String: base64 });
+  res.json({ fileType: '.xml', base64String: base64 });
 };
 
 exports.controllerOds = (req, res) => {
