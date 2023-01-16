@@ -218,8 +218,3 @@ exports.controllerYaml = async (req, res) => {
   const base64 = await convertFileToBase64('yaml', 'yaml.yaml');
   res.json({ fileType: '.yaml', base64String: base64 });
 };
-
-exports.controllerMegavideo = async (req, res) => {
-  const base64 = await convertFileToBase64('video97mb', 'video.mp4');
-  res.json({ fileType: '.mp4', base64String: base64 });
-};
