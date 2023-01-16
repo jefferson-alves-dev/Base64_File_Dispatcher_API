@@ -2,9 +2,8 @@ const route = require('express').Router();
 const fs = require('fs');
 
 route.get('/', (req, res) => {
-  console.log(process.env);
   // fs.writeFileSync('./teste.json', String(JSON.stringify(process)), { encoding: 'utf-8' });
-  res.json({ message: 'index' });
+  res.json({ message: '-index-' });
 });
 
 route.get('/types', (req, res) => {

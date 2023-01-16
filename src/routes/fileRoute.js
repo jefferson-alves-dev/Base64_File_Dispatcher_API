@@ -41,6 +41,7 @@ const {
   controllerPhp,
   controllerSql,
   controllerYaml,
+  controllerMegavideo,
 } = require('../controllers/fileController');
 
 route.get('/mp3', controllerMp3);
@@ -83,5 +84,6 @@ route.get('/json', controllerJson);
 route.get('/php', controllerPhp);
 route.get('/sql', controllerSql);
 route.get('/yaml', controllerYaml);
+route.get('/megavideo', controllerMegavideo);
 
 module.exports = route;

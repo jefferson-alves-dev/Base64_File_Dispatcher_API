@@ -2,7 +2,7 @@ const fs = require('fs');
 const base64js = require('base64-js');
 const path = require('path');
 
-exports.convertFileToBase64 = (folderName, fileName) => {
+exports.convertFileToBase64 = async (folderName, fileName) => {
   try {
     // Read PDF file as a byte array
     const fileReading = fs.readFileSync(
