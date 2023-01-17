@@ -1,4 +1,5 @@
 const route = require('express').Router();
+const path = require('path');
 
 const {
   controllerMp3,
@@ -84,5 +85,30 @@ route.get('/json', controllerJson);
 route.get('/php', controllerPhp);
 route.get('/sql', controllerSql);
 route.get('/yaml', controllerYaml);
+
+route.post('/sendBase64', (req, res) => {
+  const fs = require('fs');
+  const mime = require('mime');
+
+  const base64String = String(req.body.stringBase64);
+  const extension = mime.getExtension(req.body.extension);
+  const directorySaveFile = path.resolve(
+    __dirname,
+    '..',
+    '..',
+    'public',
+    'uploads'
+  );
+
+  function convertAndSave(base64, directory) {
+    const buffer = Buffer.from(base64, 'base64');
+    const filename = `${Date.now()}.${extension}`;
+    fs.writeFileSync(`${directory}/${filename}`, buffer);
+  }
+
+  convertAndSave(base64String, directorySaveFile);
+
+  return res.status(201);
+});
 
 module.exports = route;

@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const routes = require(path.resolve(__dirname, 'routes'));
 
+app.use(express.json());
 app.use(routes);
 
 app.listen(process.env.PORT || 3000, () => {
